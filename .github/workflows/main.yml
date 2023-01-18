@@ -1,0 +1,9 @@
+on: [push]
+
+jobs:
+  main:
+    runs-on: ubuntu-latest
+    name: A job to say hello
+    steps:
+      - name: Say hello from foo
+        uses: mongrelion/github-actions-lab/actions/foo@main
