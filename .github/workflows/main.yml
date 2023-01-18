@@ -7,3 +7,6 @@ jobs:
     steps:
       - name: Say hello from foo
         uses: mongrelion/github-actions-lab/actions/foo@main
+
+      - name: Say hello from bar
+        uses: mongrelion/github-actions-lab/actions/bar@main
