@@ -1,0 +1,5 @@
+name: 'Foo'
+description: 'Say hello from Foo'
+runs:
+  using: 'node16'
+  main: 'dist/index.js'
