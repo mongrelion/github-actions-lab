@@ -1,0 +1,30 @@
+name: CI custom actions
+
+on:
+  push:
+    paths:
+      - '.github/workflows/ci.yml'
+      - 'actions/hello-world'
+
+jobs:
+  build:
+    name: Build hello-world action
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Install NodeJS
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16.x
+
+      - name: Build latest version for testing
+        run: |
+          npm install
+          npm run build
+        working-directory: actions/hello-world
+
+      - name: Call our custom action hello-world
+        uses: ./actions/hello-world
