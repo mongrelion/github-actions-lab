@@ -1,4 +1,10 @@
-on: [push]
+name: Foo & Bar
+
+on:
+  push:
+    paths:
+      - actions/foo
+      - actions/bar
 
 jobs:
   main:
