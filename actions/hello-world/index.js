@@ -1,7 +1,4 @@
 const core = require('@actions/core');
 
-core.warning('Something, something, deprecation');
-core.warning('This is another warning', {
-  foo: 'foo',
-  bar: 'bar'
-});
+core.setFailed('Something went wrong');
+throw new Error('Something went terribly wrong');
