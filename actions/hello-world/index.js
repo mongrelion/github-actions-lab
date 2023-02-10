@@ -1,5 +1,9 @@
 const core = require('@actions/core');
 
-const err = new Error('This is an error object');
-core.warning('Something went wrong');
-core.error(err);
+function getImportantValue() {
+  return core.getInput('important') === 'true';
+}
+
+const important = getImportantValue();
+const message = `type=${typeof important};value=${important}`;
+core.info(message);

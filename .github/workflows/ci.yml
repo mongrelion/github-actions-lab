@@ -26,5 +26,15 @@ jobs:
           npm run build
         working-directory: actions/hello-world
 
-      - name: Call our custom action hello-world
+      - name: hello-world with "important" as false
+        uses: ./actions/hello-world
+        with:
+          important: false
+
+      - name: hello-world with "important" as true
+        uses: ./actions/hello-world
+        with:
+          important: true
+
+      - name: hello-world without "important"
         uses: ./actions/hello-world

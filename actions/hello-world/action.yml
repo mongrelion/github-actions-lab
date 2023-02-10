@@ -1,6 +1,11 @@
 name: "Hello world"
 description: "Prints a hello world message in the console"
 
+inputs:
+  important:
+    description: (bool) is this thing important?
+    required: false
+
 runs:
   using: "node16"
   main: "dist/index.js"
