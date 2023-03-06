@@ -1,0 +1,21 @@
+on:
+  workflow_call:
+    inputs:
+      deploy:
+        required: false
+        type: boolean
+
+jobs:
+  first:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Install dependencies
+        run: echo "Installing dependencies"
+
+      - name: Build app
+        run: echo "Building app"
+
+      - name: Deploy
+        run: echo "Deploying app"
+        if: ${{ inputs.deploy }}

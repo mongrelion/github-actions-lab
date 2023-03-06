@@ -1,0 +1,17 @@
+name: Reuse reusable
+
+on:
+  workflow_dispatch:
+
+  push:
+
+jobs:
+  ci:
+    name: CI
+    uses: ./.github/workflows/parent.yml
+
+  cd:
+    name: CD
+    uses: ./.github/workflows/parent.yml
+    with:
+      deploy: true
