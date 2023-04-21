@@ -1,0 +1,17 @@
+name: Manual Run
+
+on:
+  workflow_dispatch:
+    inputs:
+      username:
+        description: The name of the user
+        required: true
+        default: John
+
+jobs:
+  main:
+    name: Main
+    runs-on: ubuntu-latest
+    steps:
+    - name: Do something
+      run: echo "I'm doing something"
