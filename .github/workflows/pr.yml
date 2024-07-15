@@ -1,0 +1,56 @@
+name: CI
+
+on:
+  pull_request:
+    branches:
+      - 'main'
+
+jobs:
+  validate-pr-title:
+    name: Validate PR title
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Validate PR title
+        run: echo 'Validate PR title'
+
+  pre-commit:
+    name: Run pre-commit
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Run pre-commit
+        run: echo 'Run pre-commit'
+
+  terraform-plan:
+    name: Terraform plan
+    runs-on: ubuntu-latest
+
+    needs:
+      - validate-pr-title
+      - pre-commit
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install terraform
+        run: echo 'Install terraform'
+
+      - name: Format
+        run: echo 'terraform fmt'
+
+      - name: Initialize
+        run: echo 'terraform init'
+
+      - name: Validate
+        run: echo 'terraform validate'
+
+      - name: Plan
+        run: echo 'terraform plan'
