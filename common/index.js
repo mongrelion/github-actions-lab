@@ -1,5 +1,5 @@
 var sayHello = function() {
-  console.log("hello, world");
+  console.log("Hi there!");
 };
 
 exports.sayHello = sayHello;
